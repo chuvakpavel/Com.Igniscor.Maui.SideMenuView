@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Com.Igniscor.Maui.SideMenu.Views;assembly=Com.Igniscor.Maui.SideMenu"
+    xmlns:helpers="clr-namespace:SampleProject.Helpers"
+    xmlns:viewModels="clr-namespace:SampleProject.ViewModels"
+    xmlns:support="clr-namespace:SampleProject.Views.Support"
+    x:Class="SampleProject.Views.ExperimentalPage"
+    x:DataType="viewModels:ExperimentalViewModel"
+    Title="{x:Static helpers:Constants+Texts.ExperimentalPageTitle}">
+
+    <support:ExperimentView>
+
+        <support:ExperimentView.ControlPreviewView>
+
+            <VerticalStackLayout Spacing="2">
+
+                <Label Text="{x:Static helpers:Constants+Texts.SlideInAnimation}" />
+
+                <Border HeightRequest="100">
+
+                    <views:SideMenuView State="{Binding SideMenuState}">
+
+                        <VerticalStackLayout
+                            views:SideMenuView.Position="LeftMenu"
+                            views:SideMenuView.MenuAppearanceType="SlideIn"
+                            views:SideMenuView.MenuWidthPercentage="0.5"
+                            views:SideMenuView.MainViewScaleFactor="{Binding MainViewScaleFactor}"
+                            views:SideMenuView.MainViewOpacityFactor="{Binding MainViewOpacityFactor}"
+                            views:SideMenuView.MenuGestureEnabled="{Binding MenuGestureEnabled}"
+                            views:SideMenuView.ParallaxValue="{Binding ParallaxValue}"
+                            BackgroundColor="{StaticResource PrimaryDark}">
+
+                            <Label Text="{x:Static helpers:Constants+Texts.SlideInAnimation}" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            views:SideMenuView.Position="RightMenu"
+                            views:SideMenuView.MenuAppearanceType="SlideIn"
+                            views:SideMenuView.MenuWidthPercentage="0.5"
+                            views:SideMenuView.MainViewScaleFactor="{Binding MainViewScaleFactor}"
+                            views:SideMenuView.MainViewOpacityFactor="{Binding MainViewOpacityFactor}"
+                            views:SideMenuView.MenuGestureEnabled="{Binding MenuGestureEnabled}"
+                            views:SideMenuView.ParallaxValue="{Binding ParallaxValue}"
+                            BackgroundColor="{StaticResource PrimaryDark}">
+
+                            <Label Text="{x:Static helpers:Constants+Texts.SlideInAnimation}" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            BackgroundColor="{StaticResource Tertiary}"
+                            views:SideMenuView.Position="MainView">
+
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="{x:Static helpers:Constants+Texts.TestText}"
+                                FontSize="Large" />
+
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="{x:Static helpers:Constants+Texts.TestText}"
+                                FontSize="Medium" />
+
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="{x:Static helpers:Constants+Texts.TestText}"
+                                FontSize="Small" />
+                        </VerticalStackLayout>
+                    </views:SideMenuView>
+                </Border>
+
+                <Label Text="{x:Static helpers:Constants+Texts.SlideOutAnimation}" />
+
+                <Border HeightRequest="100">
+
+                    <views:SideMenuView State="{Binding SideMenuState}">
+
+                        <VerticalStackLayout
+                            views:SideMenuView.Position="LeftMenu"
+                            views:SideMenuView.MenuAppearanceType="SlideOut"
+                            views:SideMenuView.MenuWidthPercentage="0.5"
+                            views:SideMenuView.MainViewOpacityFactor="{Binding MainViewOpacityFactor}"
+                            views:SideMenuView.MainViewScaleFactor="{Binding MainViewScaleFactor}"
+                            views:SideMenuView.MenuGestureEnabled="{Binding MenuGestureEnabled}"
+                            views:SideMenuView.ParallaxValue="{Binding ParallaxValue}"
+                            BackgroundColor="{StaticResource PrimaryDark}">
+
+                            <Label Text="{x:Static helpers:Constants+Texts.SlideOutAnimation}" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            views:SideMenuView.Position="RightMenu"
+                            views:SideMenuView.MenuAppearanceType="SlideOut"
+                            views:SideMenuView.MenuWidthPercentage="0.5"
+                            views:SideMenuView.MainViewOpacityFactor="{Binding MainViewOpacityFactor}"
+                            views:SideMenuView.MainViewScaleFactor="{Binding MainViewScaleFactor}"
+                            views:SideMenuView.MenuGestureEnabled="{Binding MenuGestureEnabled}"
+                            views:SideMenuView.ParallaxValue="{Binding ParallaxValue}"
+                            BackgroundColor="{StaticResource PrimaryDark}">
+
+                            <Label Text="{x:Static helpers:Constants+Texts.SlideOutAnimation}" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            BackgroundColor="{StaticResource Tertiary}"
+                            views:SideMenuView.Position="MainView">
+
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="{x:Static helpers:Constants+Texts.TestText}"
+                                FontSize="Large" />
+
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="{x:Static helpers:Constants+Texts.TestText}"
+                                FontSize="Medium" />
+
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="{x:Static helpers:Constants+Texts.TestText}"
+                                FontSize="Small" />
+                        </VerticalStackLayout>
+                    </views:SideMenuView>
+                </Border>
+
+                <Label Text="{x:Static helpers:Constants+Texts.SlideInOutAnimation}" />
+
+                <Border HeightRequest="100">
+
+                    <views:SideMenuView State="{Binding SideMenuState}">
+
+                        <VerticalStackLayout
+                            views:SideMenuView.Position="LeftMenu"
+                            views:SideMenuView.MenuAppearanceType="SlideInOut"
+                            views:SideMenuView.MenuWidthPercentage="0.5"
+                            views:SideMenuView.MainViewOpacityFactor="{Binding MainViewOpacityFactor}"
+                            views:SideMenuView.MainViewScaleFactor="{Binding MainViewScaleFactor}"
+                            views:SideMenuView.MenuGestureEnabled="{Binding MenuGestureEnabled}"
+                            views:SideMenuView.ParallaxValue="{Binding ParallaxValue}"
+                            BackgroundColor="{StaticResource PrimaryDark}">
+
+                            <Label Text="{x:Static helpers:Constants+Texts.SlideInOutAnimation}" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            views:SideMenuView.Position="RightMenu"
+                            views:SideMenuView.MenuAppearanceType="SlideInOut"
+                            views:SideMenuView.MenuWidthPercentage="0.5"
+                            views:SideMenuView.MainViewOpacityFactor="{Binding MainViewOpacityFactor}"
+                            views:SideMenuView.MainViewScaleFactor="{Binding MainViewScaleFactor}"
+                            views:SideMenuView.MenuGestureEnabled="{Binding MenuGestureEnabled}"
+                            views:SideMenuView.ParallaxValue="{Binding ParallaxValue}"
+                            BackgroundColor="{StaticResource PrimaryDark}">
+
+                            <Label Text="{x:Static helpers:Constants+Texts.SlideInOutAnimation}" />
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            BackgroundColor="{StaticResource Tertiary}"
+                            views:SideMenuView.Position="MainView">
+
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="{x:Static helpers:Constants+Texts.TestText}"
+                                FontSize="Large" />
+
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="{x:Static helpers:Constants+Texts.TestText}"
+                                FontSize="Medium" />
+
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="{x:Static helpers:Constants+Texts.TestText}"
+                                FontSize="Small" />
+                        </VerticalStackLayout>
+                    </views:SideMenuView>
+                </Border>
+            </VerticalStackLayout>
+        </support:ExperimentView.ControlPreviewView>
+
+        <support:ExperimentView.ControlPropertiesView>
+            <VerticalStackLayout
+                Margin="5,10,5,0"
+                Spacing="5">
+
+                <support:ThreeButtons
+                    Title="{Binding GetMenuState}"
+                    PositiveButtonText="{x:Static helpers:Constants+Texts.Left}"
+                    MiddleButtonText="{x:Static helpers:Constants+Texts.Main}"
+                    NegativeButtonText="{x:Static helpers:Constants+Texts.Right}"
+                    PositiveCommand="{Binding SetSideMenuRightCommand}"
+                    MiddleCommand="{Binding SetSideMenuMainStateCommand}"
+                    NegativeCommand="{Binding SetSideMenuLeftStateCommand}" />
+
+                <support:TwoButtons
+                    Title="{Binding GetGestureState}"
+                    PositiveButtonText="{x:Static helpers:Constants+Texts.CurrentGestureEnable}"
+                    NegativeButtonText="{x:Static helpers:Constants+Texts.CurrentGestureDisable}"
+                    PositiveCommand="{Binding MenuGestureEnabledCommand}"
+                    NegativeCommand="{Binding MenuGestureDisableCommand}" />
+
+                <support:SliderView
+                    Title="{x:Static helpers:Constants+Texts.ParallaxLabel}"
+                    Value="{Binding ParallaxValue}"
+                    Maximum="100"
+                    Minimum="0" />
+
+                <support:SliderView
+                    Title="{x:Static helpers:Constants+Texts.MainViewOpacityFactorLabel}"
+                    Value="{Binding MainViewOpacityFactor}"
+                    Maximum="1"
+                    Minimum="0" />
+
+                <support:SliderView
+                    Title="{x:Static helpers:Constants+Texts.MainViewScaleFactorLabel}"
+                    Value="{Binding MainViewScaleFactor}"
+                    Maximum="1"
+                    Minimum="0" />
+            </VerticalStackLayout>
+        </support:ExperimentView.ControlPropertiesView>
+    </support:ExperimentView>
+</ContentPage>

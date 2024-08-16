@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Com.Igniscor.Maui.SideMenu.Views;assembly=Com.Igniscor.Maui.SideMenu"
+    xmlns:models="clr-namespace:SampleProject.Models"
+    xmlns:viewModels="clr-namespace:SampleProject.ViewModels"
+    xmlns:helpers="clr-namespace:SampleProject.Helpers"
+    x:Class="SampleProject.Views.SideMenuViewListPage"
+    x:DataType="viewModels:SideMenuViewListViewModel"
+    x:Name="Page"
+    Title="{x:Static helpers:Constants+Texts.SideMenuViewListPageTitle}">
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+            <DataTemplate
+                x:Key="Content"
+                x:DataType="models:ListOfSideMenuItem">
+
+                <Border
+                    HorizontalOptions="FillAndExpand"
+                    Margin="5,1">
+
+                    <Label
+                        HorizontalOptions="Center"
+                        FontSize="Large"
+                        Text="{Binding Name}" />
+
+                </Border>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+
+        <VerticalStackLayout BindableLayout.ItemsSource="{Binding Collection}">
+
+            <BindableLayout.ItemTemplate>
+
+                <DataTemplate x:DataType="models:ListOfSideMenuItem">
+
+                    <Border Margin="5">
+
+                        <views:SideMenuView
+                            HeightRequest="80"
+                            WidthRequest="{Binding Source={x:Reference Page}, Path=Width}"
+                            State="{Binding SideMenuState}">
+
+                            <VerticalStackLayout
+                                views:SideMenuView.Position="LeftMenu"
+                                views:SideMenuView.MenuAppearanceType="SlideIn"
+                                views:SideMenuView.MenuWidthPercentage="0.5"
+                                BackgroundColor="{StaticResource PrimaryDark}">
+
+                                <Label
+                                    Text="{Binding Description}"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center" />
+                            </VerticalStackLayout>
+
+                            <Grid
+                                RowDefinitions="*"
+                                ColumnDefinitions="*"
+                                views:SideMenuView.Position="MainView">
+
+                                <Grid.GestureRecognizers>
+
+                                    <TapGestureRecognizer
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:SideMenuViewListViewModel}},
+                                                                            Path=OnTapCommand}"
+                                        CommandParameter="{Binding .}" />
+                                </Grid.GestureRecognizers>
+
+                                <Label
+                                    Text="{Binding Name}"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Center" />
+                            </Grid>
+                        </views:SideMenuView>
+                    </Border>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

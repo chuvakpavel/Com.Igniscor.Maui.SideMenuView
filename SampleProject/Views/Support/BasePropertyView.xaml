@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SampleProject.Views.Support.BasePropertyView"
+    x:Name="BaseView">
+    <ContentView.Resources>
+
+        <Style x:Key="LocalFrameStyle" TargetType="Border">
+
+            <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+
+            <Setter Property="Stroke" Value="Transparent" />
+
+            <Setter Property="StrokeShape">
+
+                <RoundRectangle CornerRadius="10" />
+            </Setter>
+        </Style>
+
+        <Style x:Key="LocalTitleLabelStyle" TargetType="Label">
+
+            <Setter Property="FontSize" Value="15" />
+
+            <Setter Property="TextColor" Value="{StaticResource PrimaryDarkText}" />
+
+            <Setter Property="HorizontalOptions" Value="Center" />
+
+            <Setter Property="VerticalOptions" Value="Center" />
+
+            <Setter Property="LineBreakMode" Value="NoWrap" />
+        </Style>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+
+        <Border
+            Style="{StaticResource LocalFrameStyle}"
+            Padding="10">
+
+            <Grid
+                RowDefinitions="Auto,Auto"
+                RowSpacing="10">
+
+
+                <Label
+                    Style="{StaticResource LocalTitleLabelStyle}"
+                    Text="{Binding Source={x:Reference BaseView}, 
+                                   Path=Title}"
+                    Grid.Row="0" />
+
+                <Grid
+                    x:Name="InnerViewGrid"
+                    x:FieldModifier="private"
+                    Grid.Row="1" />
+            </Grid>
+        </Border>
+    </ContentView.Content>
+</ContentView>

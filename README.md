@@ -1,0 +1,2 @@
+# Com.Igniscor.Maui.SideMenuView
+ 

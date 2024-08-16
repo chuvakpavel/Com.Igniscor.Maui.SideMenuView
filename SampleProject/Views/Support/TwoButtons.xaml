@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:support="clr-namespace:SampleProject.Views.Support"
+    x:Name="View"
+    x:Class="SampleProject.Views.Support.TwoButtons">
+    <ContentView.Resources>
+
+        <Style x:Key="LocalButtonStyle" TargetType="Button">
+
+            <Setter Property="FontSize" Value="15" />
+
+            <Setter Property="TextColor" Value="{DynamicResource ControlsPropertyViewButtonTextColor}" />
+
+            <Setter Property="BackgroundColor" Value="{DynamicResource ControlsPropertyViewButtonBackgroundColor}" />
+
+            <Setter Property="CornerRadius" Value="10" />
+        </Style>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+
+        <support:BasePropertyView Title="{Binding Source={x:Reference View},Path=Title}">
+
+            <support:BasePropertyView.InnerView>
+
+                <Grid
+                    ColumnSpacing="10"
+                    ColumnDefinitions="*,*">
+                    
+                    <Button
+                        Style="{StaticResource LocalButtonStyle}"
+                        Text="{Binding Source={x:Reference View}, 
+                                       Path=NegativeButtonText}"
+                        Command="{Binding Source={x:Reference View}, 
+                                          Path=NegativeCommand}"
+                        Grid.Column="0" />
+
+                    <Button
+                        Style="{StaticResource LocalButtonStyle}"
+                        Text="{Binding Source={x:Reference View}, 
+                                       Path=PositiveButtonText}"
+                        Command="{Binding Source={x:Reference View}, 
+                                          Path=PositiveCommand}"
+                        Grid.Column="1" />
+                </Grid>
+            </support:BasePropertyView.InnerView>
+        </support:BasePropertyView>
+    </ContentView.Content>
+</ContentView>
