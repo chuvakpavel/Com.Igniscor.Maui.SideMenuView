@@ -59,7 +59,7 @@
 ***
 
 # Usage SideMenuView
-Available on **NuGet**: https://www.nuget.org/packages/Xamarin.CommunityToolkit
+Available on **NuGet**: https://www.nuget.org/packages/Com.Igniscor.Maui.SideMenuView
 
 Install into your cross-platform project.
 ``` c#
