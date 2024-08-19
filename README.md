@@ -59,7 +59,7 @@
 ***
 
 # Usage SideMenuView
-Available on **NuGet**:
+Available on **NuGet**: https://www.nuget.org/packages/Xamarin.CommunityToolkit
 
 Install into your cross-platform project.
 ``` c#
