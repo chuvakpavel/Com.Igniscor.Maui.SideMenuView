@@ -11,7 +11,7 @@
 		
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
@@ -21,9 +21,16 @@
 		<Product>Com.Igniscor.Maui.SideMenuView</Product>
 		<PackageId>Com.Igniscor.Maui.SideMenuView</PackageId>
 		<PackageIcon>icon.png</PackageIcon>
-		<PackageTags>Android IOS Maui SideMenuView Igniscor</PackageTags>
+		<PackageTags>android  ios  maui  controls dotnet sidemenview sidemenu side menu igniscor xamarin communitytoolkit toolkit kit dotnetcomunitytoolkit </PackageTags>
 		<BaseOutputPath>D:\c#\Maui\Package\Release</BaseOutputPath>
-		<Description> Adds a swipeable side menu converted from Xamarin.Forms</Description>
+		<Description>Side Menu View for Maui (Android, iOS). Ported from Xamarin Community Toolkit.</Description>
+		<IncludeSymbols>False</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/chuvakpavel/Com.Igniscor.Maui.SideMenuView</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<Version>1.0.1</Version>
 	</PropertyGroup>
 
 	<!--#region Filename-based Multi-Targeting-->
@@ -44,6 +51,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Include="..\..\Package\Release\SideMenuView\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	  <None Include="C:\Users\User\Downloads\icon.png">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
@@ -52,8 +63,8 @@
 
 	<!--#endregion Filename-based Multi-Targeting-->
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.80" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.80" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.3" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.3" />
 	</ItemGroup>
 
 </Project>

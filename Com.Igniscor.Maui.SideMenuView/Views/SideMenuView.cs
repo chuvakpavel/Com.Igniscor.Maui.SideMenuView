@@ -346,14 +346,6 @@ public sealed class SideMenuView : BaseTemplatedView<AbsoluteLayout>
         _overlayView = SetupMainViewLayout(new ContentView()
         {
             InputTransparent = true,
-            BackgroundColor = Colors.Transparent,
-            GestureRecognizers =
-            {
-                new TapGestureRecognizer
-                {
-                    Command = new Command(() => State = SideMenuState.MainViewShown)
-                }
-            }
         });
 
 #if !__ANDROID__
